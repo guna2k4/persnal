@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canan Event</title>
+    <link rel="stylesheet" href="2.css">
+
+    <div class="top-bar">
+        <h1>CANNAN EVENT</h1>
+        <ul class="nav-links">
+            <li><a href="index.html" class="red">Home</a></li>
+            <li><a href="do to.html" class="yellow">Progress</a></li>
+            <li><a href="dashboard.html" class="green">Dashboard</a></li>
+        </ul>
+    </div>
+
+</head>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="COMP 2800 - MyMind" />
+
+    <title>MyMind</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="1.svg" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/410249dbdb.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="home.css" />
+    <link rel="stylesheet" type="text/css" href="responsive.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        #bannerHome {
+            background-image: url('ima/physical.jpg'); /* Replace with your actual banner image */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            height: 300px; /* Adjust the height as needed */
+        }
+
+        #therapySec {
+            background-image: url('ima/child.svg'); /* Replace with your AI revolutionizing image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        #companySec {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+            background-image: url('ima/adult.svg'); /* Replace with your company section image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        #contactSec {
+            background-image: url('ima/adult.jpg'); /* Replace with your contact section image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        #contactContainer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #contactInfo {
+            max-width: 400px;
+        }
+
+        #mapSec {
+            flex: 1;
+            height: 300px; /* Set a fixed height for the map */
+            position: relative;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        #footerPlaceHolder {
+            background-image: url('.jpg'); /* Replace with your footer image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">       
+         <div id="bannerHome">
+         <div id="overlay">
+                <div id="homeHeader">
+                    <h1>welcome to do to with your persnalise video</h1>
+
+                    <h2>"Revolutionizing Task Management: Harnessing AI for Personalized Motivation
+                         and Peak Productivity in the New Era of Efficiency."
+
+                       </h2>
+                    <div><a href="home.html">your to do list</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="therapySec">
+            <h2>AI revolutionizing</h2>
+            <div id="mendorsCards">
+            </div>
+        </div>
+
+        <div id="companySec">
+            <div>
+                <img src="peak.png" alt="Company Info">
+            </div>
+            <div id="companyDesc">
+                <h2>MyMind Can Help You</h2>
+                <p> we are passionate about revolutionizing the way individuals approach their daily tasks and goals.
+                    Our company is dedicated to providing a unique and visually engaging to-do list experience, where users
+                    not only manage their tasks but also witness their progress in a dynamic and motivating way. Through our
+                    innovative platform, we empower users to create personalized to-do lists, allowing them to input tasks,
+                    set deadlines, and visualize their achievements over time. Our focus on visual progress tracking aims to
+                    inspire a sense of accomplishment and motivation, turning mundane tasks into fulfilling milestones. Join
+                    us on a journey towards enhanced productivity, where your to-do list becomes a powerful tool for
+                    personal and professional growth. At [Company Name], we believe in transforming the ordinary into the
+                    extraordinary, one task at a time."
+                </p>
+            </div>
+        </div>
+
+        <div id="contactSec">
+            <div id="contactContainer">
+                <div id="contactInfo">
+                    <h4>Contact Details</h4>
+                    <h2>Burnaby</h2>
+                    <p>3700 Willingdon Ave, Burnaby, BC V5G 3H2</p>
+                    <div class="contactDetails">
+                        <div class="contactIcons">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <a href="mailto:info@mymind.com">info@mymind.com</a>
+                    </div>
+                    <div class="contactDetails">
+                        <div class="contactIcons">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+                        <a href="tel:604.555.5012">(604) 555 - 5012</a>
+                    </div>
+                </div>
+                <div id="mapSec">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="therapistChat"></div>
+        <div id="footerPlaceHolder"></div>
+    </div>
+
+</body>
+
+</html>

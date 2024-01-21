@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canan Event</title>
+    <link rel="stylesheet" href="2.css">
+    <style>
+        #video-container {
+            display: none;
+            width: 400px;
+            height: 500px;
+        }
+
+        #bg-video {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="content">
+        <div class="top-bar">
+            <h1>CANNAN EVENT</h1>
+            <ul class="nav-links">
+                <li><a href="progress.html" class="yellow">Progress</a></li>
+                <li><a href="child.html" class="red">Child</a></li>
+                <li><a href="teen.html" class="yellow">Teen</a></li>
+                <li><a href="adult.html" class="green">Adult</a></li>
+            </ul>
+        </div>
+
+        <div id="user-input-table">
+            <h2>Enter your to-do</h2>
+            <form>
+                <div id="user-input-table">
+                    <h2>Enter your to do</h2>
+                    <form>
+                        <label for="taskInput">Task:</label>
+                        <input type="text" id="taskInput">
+            
+                        <label for="procrastinationInput">Procrastination:</label>
+                        <input type="text" id="procrastinationInput">
+            
+                        <label for="distractionsInput">Distractions:</label>
+                        <input type="text" id="distractionsInput">
+            
+                        <label for="rewardInput">Reward:</label>
+                        <input type="text" id="rewardInput">
+            
+                        <label for="promiseInput">Make a Promise:</label>
+                        <input type="text" id="promiseInput">
+            
+                        <label for="durationInput">Duration:</label>
+                        <input type="text" id="durationInput">
+            
+                        <button type="button" onclick="addUserInput()">Add your task</button>
+                    </form>
+            
+                    <table id="inputTable" border="1">
+                        <thead>
+                            <tr>
+                                <th>Task</th>
+                                <th>Procrastination</th>
+                                <th>Distractions</th>
+                                <th>Reward</th>
+                                <th>Make a Promise</th>
+                                <th>Duration</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- User input rows will be added dynamically here -->
+                        </tbody>
+                    </table>
+                </div>
+            <button onclick="showVideo()">See Video</button>
+        </div>
+    </div>
+
+    <!-- Video Container -->
+    <div id="video-container">
+        <h2>Video:</h2>
+        <video id="bg-video" controls>
+            <source src="m.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        function addUserInput() {
+            var table = document.getElementById("inputTable");
+            var row = table.insertRow(-1);
+
+            var taskCell = row.insertCell(0);
+            var procrastinationCell = row.insertCell(1);
+            var distractionsCell = row.insertCell(2);
+            var rewardCell = row.insertCell(3);
+            var promiseCell = row.insertCell(4);
+            var durationCell = row.insertCell(5);
+            var actionCell = row.insertCell(6);
+
+            taskCell.innerHTML = document.getElementById("taskInput").value;
+            procrastinationCell.innerHTML = document.getElementById("procrastinationInput").value;
+            distractionsCell.innerHTML = document.getElementById("distractionsInput").value;
+            rewardCell.innerHTML = document.getElementById("rewardInput").value;
+            promiseCell.innerHTML = document.getElementById("promiseInput").value;
+            durationCell.innerHTML = document.getElementById("durationInput").value;
+
+            var deleteButton = document.createElement("button");
+            deleteButton.innerHTML = "Delete";
+            deleteButton.onclick = function () {
+                deleteRow(row);
+            };
+            actionCell.appendChild(deleteButton);
+        }
+
+        function deleteRow(row) {
+            var index = row.rowIndex;
+            document.getElementById("inputTable").deleteRow(index);
+        }
+
+        function showVideo() {
+            // Hide the entire content and show the video container
+            document.getElementById("content").style.display = "none";
+            document.getElementById("video-container").style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>

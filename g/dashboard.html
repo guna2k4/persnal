@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canan Event</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .top-bar {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .top-bar h1 {
+            margin: 0;
+            color: white;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <video id="bg-video" autoplay muted loop>
+        <source src="m.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="top-bar">
+        <h1>CANNAN EVENT</h1>
+        <ul class="nav-links">
+            <li><a href="home.html" class="red">Home</a></li>
+            <li><a href="progress.html" class="yellow">Progress</a></li>
+            <li><a href="dashboard.html" class="green">Dashboard</a></li>
+
+        </ul>
+    </div>
+
+    <div id="task-table">
+        <table border="1" cellspacing="0" cellpadding="10" style="margin: 20px auto; width: 80%; background-color: white;">
+            <caption>Your Tasks</caption>
+            <tr style="background-color: white; color: black;">
+                <th>Date</th>
+                <th>Task 1</th>
+                <th>Task 2</th>
+                <th>Task 3</th>
+                <th>Task 4</th>
+                <th>Task 5</th>
+                <th>Action</th>
+            </tr>
+
+            <!-- Repeat the following row structure for each day using JavaScript -->
+        </table>
+    </div>
+
+    <script>
+        // Function to generate rows
+        function generateRows() {
+            var table = document.querySelector("#task-table table");
+
+            for (var i = 1; i <= 30; i++) {
+                var date = new Date('2024-01-01');
+                date.setDate(date.getDate() + i);
+
+                var formattedDate = date.toISOString().split('T')[0];
+
+                var row = table.insertRow(-1);
+                row.id = 'row' + i;
+
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                var cell5 = row.insertCell(4);
+                var cell6 = row.insertCell(5);
+                var cell7 = row.insertCell(6);
+
+                cell1.innerHTML = formattedDate;
+                cell2.innerHTML = 'Not Complete';
+                cell3.innerHTML = 'Not Complete';
+                cell4.innerHTML = 'Not Complete';
+                cell5.innerHTML = 'Not Complete';
+                cell6.innerHTML = 'Not Complete';
+                cell7.innerHTML = '<button onclick="markComplete(' + i + ')">Complete</button>' +
+                                  '<button onclick="markNotComplete(' + i + ')">Not Complete</button>';
+            }
+        }
+
+        // Function to mark a row as complete
+        function markComplete(day) {
+            var row = document.getElementById('row' + day);
+            var cells = row.getElementsByTagName('td');
+
+            for (var i = 1; i <= 5; i++) {
+                cells[i].innerText = 'Complete';
+            }
+
+            row.style.backgroundColor = 'green';
+            row.style.color = 'white';
+        }
+
+        // Function to mark a row as not complete
+        function markNotComplete(day) {
+            var row = document.getElementById('row' + day);
+            var cells = row.getElementsByTagName('td');
+
+            for (var i = 1; i <= 5; i++) {
+                cells[i].innerText = 'Not Complete';
+            }
+
+            row.style.backgroundColor = 'red';
+            row.style.color = 'white';
+        }
+
+        // Call the function to generate rows when the page loads
+        window.onload = generateRows;
+    </script>
+
+</body>
+
+</html>
